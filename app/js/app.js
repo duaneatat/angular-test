@@ -3,9 +3,11 @@
 /* App Module */
 
 var testApp = angular.module('testApp', [
+  'gridshore.c3js.chart',
   'ngRoute',
   'testControllers',
-  'testServices'
+  'testServices',
+  'testDirectives'
 ]);
 
 testApp.config([
@@ -14,7 +16,12 @@ testApp.config([
     $routeProvider.
       when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
-        controller: 'DashboardCtrl'
+        controller: 'DashboardCtrl',
+        resolve: {
+          charts: function(chartService) {
+            return chartService.getCharts();
+          }
+        }
       }).
       otherwise({
         redirectTo: '/dashboard'

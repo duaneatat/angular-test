@@ -19,7 +19,7 @@ describe('controllers', function() {
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('DashboardCtrl', {$scope: scope});
+      ctrl = $controller('DashboardCtrl', {$scope: scope, charts: [1,2]});
     }));
 
 

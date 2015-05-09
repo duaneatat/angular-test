@@ -1,0 +1,12 @@
+<div class="row dashboard-chart">
+	<div class="col-md-12">
+		<h3>{{ chart.name }}</h3>
+		<c3chart bindto-id="chart-{{ chart.id }}">
+		  <chart-column
+		  		ng-repeat="column in columns"
+  				column-id="{{ column.name }}"
+          column-values="{{ column.values }}"
+          column-type="spline" />
+		</c3chart>
+	</div>
+</div>

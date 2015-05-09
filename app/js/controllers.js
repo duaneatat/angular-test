@@ -5,8 +5,9 @@
 var testControllers = angular.module('testControllers', []);
 
 testControllers.controller('DashboardCtrl', [
-  '$scope',
-  function($scope) {
+  '$scope', 'charts',
+  function($scope, charts) {
     $scope.title = 'Dashboard';
+    $scope.charts = charts;
   }
 ]);
